@@ -1,0 +1,152 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      6399,        143]
+NotebookOptionsPosition[      4140,        109]
+NotebookOutlinePosition[      4506,        124]
+CellTagsIndexPosition[      4463,        121]
+WindowTitle->NonlinearOscillatorLab demo
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["NonlinearOscillatorLab \[LongDash] Wolfram Language companion", "Title",ExpressionUUID->"1ca5b1a1-edf0-ae47-8848-2f39682bd5d9"],
+
+Cell["\<\
+Conservative oscillator x'' + a x + b x^3 + c x^5 = 0. Evaluate the cells in \
+order (Shift+Enter).\
+\>", "Text",ExpressionUUID->"12550e38-d691-e64b-9b68-0f0e54978bbb"],
+
+Cell["\<\
+SetDirectory[NotebookDirectory[]]; Get[\"NonlinearOscillatorLab.wl\"]; \
+NOLVersion\
+\>", "Input",ExpressionUUID->"a19671c1-d7e6-8945-a9f6-9e3bcff24ec9"],
+
+Cell["Model, energy geometry", "Section",ExpressionUUID->"a1c9117a-2966-ef44-90b0-8830656753f6"],
+
+Cell["\<\
+m = NOLModel[1, -4, 3];   (* triple well *)
+NOLStationaryPoints[m]\
+\>", "Input",ExpressionUUID->"7dbd6746-b1b3-5e43-91f4-fa733e509732"],
+
+Cell["NOLClassifyEnergy[m, 1/2, 0]", "Input",ExpressionUUID->"559c0de9-a6ed-2942-beec-8dccc5e48feb"],
+
+Cell["NOLTurningPoints[m, 1/10]", "Input",ExpressionUUID->"83ea5919-b42c-6b44-ad6a-cbcbec9b4f68"],
+
+Cell["\<\
+Plot[NOLPotential[m, x], {x, -1.4, 1.4}, Frame -> True, FrameLabel -> {\"x\", \
+\"V(x)\"}]\
+\>", "Input",ExpressionUUID->"bc72e317-8b4b-6a4e-b3dd-c4b0f4f215ff"],
+
+Cell["\<\
+NOLPhasePortrait[m, {-1.35, 1.35}, {-0.75, 0.75}, \"Levels\" -> {0.01, 0.04, \
+0.07, 0.1, 0.15, 0.2}]\
+\>", "Input",ExpressionUUID->"8f6563d9-ae54-0641-819e-9e7f6e3ed2e8"],
+
+Cell["Periods: machine and arbitrary precision", "Section",ExpressionUUID->"a8c36dda-574b-e940-8a8f-3a079eb8e0e4"],
+
+Cell["NOLPeriod[NOLModel[1, 0.4, 0.2], 0.8, 0.1]", "Input",ExpressionUUID->"34538b8a-6c7a-a841-94e4-85e5b6cdf756"],
+
+Cell["\<\
+NOLPeriod[NOLModel[1, 2/5, 1/5], 4/5, 1/10, WorkingPrecision -> 50]\
+\>", "Input",ExpressionUUID->"e4b922e2-ed71-0e4b-a6e2-f429359c7043"],
+
+Cell["\<\
+{NOLPeriod[NOLModel[-1, 1], 1.2, 0], NOLDuffingExactPeriod[-1, 1, 1.2]}   (* \
+quadrature vs elliptic K *)\
+\>", "Input",ExpressionUUID->"5488b494-b8c5-b444-bbf2-fb107ffb0d8d"],
+
+Cell["\<\
+NOLPeriod[NOLModel[-1, 1], 1, 2^(-1/2)]   (* separatrix: Failure *)\
+\>", "Input",ExpressionUUID->"109c0e7b-6249-bd49-ba50-740f391ef60c"],
+
+Cell["\<\
+Closed-form solution x = A y / Sqrt[1 + \[Lambda] y^2 + \[Mu] y^4] (A. H. \
+Salas)\
+\>", "Section",ExpressionUUID->"0ef96d1f-02c0-064b-8efd-0d9d7b3f1d35"],
+
+Cell["\<\
+sol = NOLExactSolution[NOLModel[1, 0.4, 0.2], 0.8, 0.1];
+KeyDrop[sol, {\"x\", \"y\"}]\
+\>", "Input",ExpressionUUID->"63e56231-3e0c-0f4e-88ca-3be2a74f1756"],
+
+Cell["\<\
+sim = NOLSimulate[NOLModel[1, 0.4, 0.2], 0.8, 0.1, 30];
+Plot[{sol[\"x\"][t], sim[\"x\"][t]}, {t, 0, 30}, PlotStyle -> {Thick, \
+Dashed}, Frame -> True,
+ PlotLegends -> {\"closed form\", \"RK8\"}]\
+\>", "Input",ExpressionUUID->"84a699f3-e2c8-1e4e-9a79-70ee995d2341"],
+
+Cell["\<\
+NOLExactSolutionError[NOLModel[1, 0.4, 0.2], 0.8, 0.1, sol, 30]\
+\>", "Input",ExpressionUUID->"4d6de36b-af2a-b249-b1bb-596cae38aad9"],
+
+Cell["Random example (as in the author's original script)", "Section",ExpressionUUID->"0b740863-9a42-194e-9733-408740a27f25"],
+
+Cell["\<\
+{a0, b0, c0, x00, v00} = {RandomReal[{-12, 12}], RandomReal[{-12, 12}], \
+RandomReal[], RandomReal[{-2, 0}], RandomReal[{-2, 2}]};
+sol = NOLExactSolution[a0, b0, c0, x00, v00];
+If[FailureQ[sol], sol, {sol[\"Representation\"], \
+NOLExactSolutionError[NOLModel[a0, b0, c0], x00, v00, sol, 20]}]\
+\>", "Input",ExpressionUUID->"87e7e604-bfe5-774c-afdb-5d306bb41702"],
+
+Cell["Simulation and energy drift", "Section",ExpressionUUID->"e27555d5-dbb5-b04f-a0dc-0eba72ca4548"],
+
+Cell["\<\
+s = NOLSimulate[NOLModel[-1, 1], 1.6, 0, 100];
+NOLEnergyDrift[NOLModel[-1, 1], s]\
+\>", "Input",ExpressionUUID->"e3cabed6-37d8-f442-a96b-bb1224da53ab"]
+},
+WindowTitle->"NonlinearOscillatorLab demo",
+FrontEndVersion->"15.0 for Microsoft Windows (64-bit) (May 19, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c7075d00-acf1-564f-a54c-ec77d8a94661"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[595, 21, 133, 0, 70, "Title",ExpressionUUID->"1ca5b1a1-edf0-ae47-8848-2f39682bd5d9"],
+Cell[731, 23, 181, 3, 70, "Text",ExpressionUUID->"12550e38-d691-e64b-9b68-0f0e54978bbb"],
+Cell[912, 28, 166, 3, 70, "Input",ExpressionUUID->"a19671c1-d7e6-8945-a9f6-9e3bcff24ec9"],
+Cell[1078, 33, 96, 0, 70, "Section",ExpressionUUID->"a1c9117a-2966-ef44-90b0-8830656753f6"],
+Cell[1177, 35, 149, 3, 70, "Input",ExpressionUUID->"7dbd6746-b1b3-5e43-91f4-fa733e509732"],
+Cell[1326, 40, 100, 0, 70, "Input",ExpressionUUID->"559c0de9-a6ed-2942-beec-8dccc5e48feb"],
+Cell[1429, 42, 97, 0, 70, "Input",ExpressionUUID->"83ea5919-b42c-6b44-ad6a-cbcbec9b4f68"],
+Cell[1529, 44, 173, 3, 70, "Input",ExpressionUUID->"bc72e317-8b4b-6a4e-b3dd-c4b0f4f215ff"],
+Cell[1702, 49, 184, 3, 70, "Input",ExpressionUUID->"8f6563d9-ae54-0641-819e-9e7f6e3ed2e8"],
+Cell[1886, 54, 114, 0, 70, "Section",ExpressionUUID->"a8c36dda-574b-e940-8a8f-3a079eb8e0e4"],
+Cell[2003, 56, 114, 0, 70, "Input",ExpressionUUID->"34538b8a-6c7a-a841-94e4-85e5b6cdf756"],
+Cell[2120, 58, 149, 2, 70, "Input",ExpressionUUID->"e4b922e2-ed71-0e4b-a6e2-f429359c7043"],
+Cell[2270, 62, 189, 3, 70, "Input",ExpressionUUID->"5488b494-b8c5-b444-bbf2-fb107ffb0d8d"],
+Cell[2459, 67, 149, 2, 70, "Input",ExpressionUUID->"109c0e7b-6249-bd49-ba50-740f391ef60c"],
+Cell[2609, 71, 167, 3, 70, "Section",ExpressionUUID->"0ef96d1f-02c0-064b-8efd-0d9d7b3f1d35"],
+Cell[2776, 76, 168, 3, 70, "Input",ExpressionUUID->"63e56231-3e0c-0f4e-88ca-3be2a74f1756"],
+Cell[2944, 81, 280, 5, 70, "Input",ExpressionUUID->"84a699f3-e2c8-1e4e-9a79-70ee995d2341"],
+Cell[3222, 88, 145, 2, 70, "Input",ExpressionUUID->"4d6de36b-af2a-b249-b1bb-596cae38aad9"],
+Cell[3368, 92, 125, 0, 70, "Section",ExpressionUUID->"0b740863-9a42-194e-9733-408740a27f25"],
+Cell[3496, 94, 378, 6, 70, "Input",ExpressionUUID->"87e7e604-bfe5-774c-afdb-5d306bb41702"],
+Cell[3871, 102, 101, 0, 70, "Section",ExpressionUUID->"e27555d5-dbb5-b04f-a0dc-0eba72ca4548"],
+Cell[3975, 104, 164, 3, 70, "Input",ExpressionUUID->"e3cabed6-37d8-f442-a96b-bb1224da53ab"]
+}
+]
+*)
+
+(* End of internal cache information *)

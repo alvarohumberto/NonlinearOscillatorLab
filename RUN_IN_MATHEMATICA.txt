@@ -1,0 +1,7 @@
+All figures, tables and manuscript numbers were generated with Mathematica 15.0 (Windows 64-bit)
+on 19 Oct 2026 (log: mathematica/run_log_Mathematica15.txt). To regenerate them:
+
+   Get["<path>/NonlinearOscillatorLab/mathematica/RunAll.wls"]      (in a notebook)
+   wolframscript -file mathematica/RunAll.wls                       (in a terminal)
+
+then compile paper/manuscript.tex with pdflatex (twice).

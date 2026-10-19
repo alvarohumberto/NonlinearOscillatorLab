@@ -1,0 +1,77 @@
+NonlinearOscillatorLab (Wolfram Language) 0.1.0 - 15.0.0 for Microsoft Windows (64-bit) (May 19, 2026)
+Passed 31 / 31
+
+harmonic_period  Success  83.1
+harmonic_solution_and_energy  Success  30.4
+double_well_equilibria_exact  Success  0.
+turning_points_exact  Success  9.6
+separatrix_detection  Success  2.
+cubic_quintic  Success  18.1
+equilibrium_period  Success  0.
+harmonic_period_40_digits  Success  9.4
+cubic_quintic_machine_vs_40_digits  Success  12.3
+elliptic_hardening  Success  9.1
+elliptic_softening  Success  0.4
+elliptic_double_well_inner_dn  Success  7.1
+elliptic_double_well_outer_cn  Success  5.2
+elliptic_double_well_50_digits  Success  15.4
+elliptic_solutions_satisfy_ODE  Success  971.7
+simulation_vs_elliptic_trajectory  Success  10.1
+triple_well_equilibria_exact  Success  0.5
+triple_well_barrier  Success  1.
+period_closes_orbit  Success  1.2
+unbounded_detected  Success  0.
+separatrix_log_asymptotics  Success  174.3
+closed_form_hardening  Success  416.1
+closed_form_softening  Success  285.
+closed_form_dw_inner  Success  459.3
+closed_form_dw_outer  Success  559.
+closed_form_cq_demo  Success  476.1
+closed_form_tw_center  Success  260.7
+closed_form_tw_side  Success  1138.8
+closed_form_tw_outer  Success  1478.
+closed_form_duffing_period  Success  0.
+python_cross_validation  Success  4981.
+
+wrote demo notebook
+2.6s  wrote fig1_potentials
+6.8s  wrote fig2_phase_portraits
+7.s  demo representation: II / y: cn: orbit around 0
+23.5s  wrote fig3_closed_form_vs_numerics
+24.5s  wrote fig3a_demo_orbit
+361.3s  campaign done
+362.2s  wrote fig4_closed_form_campaign
+                                                                                       -14                         -12                         -9
+362.2s  campaign summary <|cases -> 200, represented -> 200, median_error -> 3.91354 10   , p95_error -> 2.81108 10   , max_error -> 3.55634 10  , fraction_below_1e-8 -> 1., 
+ 
+   median_time_s -> 0.174131, representations -> <|II / y: cn: orbit around 0 -> 131, II / y: dn: oscillation inside one well -> 63, I / y: Outside barrier: blows up -> 6|>|>
+364.5s  machine periods done
+374.5s  reference periods done
+375.1s  wrote fig5_period_energy
+378.7s  separatrix data {{1., 2.93358, 5.32021}, {1.5, 2.84572, 5.4156}, {2., 2.80354, 5.48569}, {2.5, 2.78499, 5.52069}, {3., 2.77736, 5.53568}, {3.5, 2.77437, 5.54162}, {4., 2.77324, 5.54388}, 
+ 
+   {4.5, 2.77282, 5.54471}, {5., 2.77267, 5.54501}, {5.5, 2.77262, 5.54512}, {6., 2.7726, 5.54516}, {6.5, 2.77259, 5.54517}, {7., 2.77259, 5.54518}, {7.5, 2.77259, 5.54518}, {8., 2.77259, 5.54518}, 
+ 
+   {8.5, 2.77259, 5.54518}, {9., 2.77259, 5.54518}, {9.5, 2.77259, 5.54518}, {10., 2.77259, 5.54518}, {10.5, 2.77259, 5.54518}, {11., 2.77259, 5.54518}, {11.5, 2.77259, 5.54518}, 
+ 
+   {12., 2.77259, 5.54518}, {12.5, 2.77259, 5.54518}, {13., 2.77259, 5.54518}, {13.5, 2.77259, 5.54518}, {14., 2.77259, 5.54518}, {14.5, 2.77259, 5.54518}, {15., 2.77259, 5.54518}, 
+ 
+   {15.5, 2.77259, 5.54518}, {16., 2.77259, 5.54518}}
+379.2s  wrote fig6_period_accuracy
+379.4s  precision study {{16, 18.5803, 0.005537}, {20, 19.7352, 0.0050722}, {24, 34.7715, 0.0067439}, {28, 36.6809, 0.0063039}, {32, 38.659, 0.0073087}, {36, 38.648, 0.0084179}, 
+ 
+   {40, 52.9968, 0.0103663}, {44, 55.7417, 0.0147761}, {48, 55.7555, 0.0149531}, {52, 58.3285, 0.0162188}, {56, 58.2051, 0.0175704}, {60, 71.3315, 0.0188799}, {64, 75.2793, 0.0208721}, 
+ 
+   {68, 76.0697, 0.0208902}, {72, 77.469, 0.0219047}}
+382.2s  wrote fig7_precision_and_tolerance
+386.2s  tables written
+386.2s  numbers {wlTests -> 31, wlPassed -> 31, pythonTests -> 15, pythonLegacyMaxErr -> \ensuremath{1.7\times10^{-5}}, pythonLegacyMedErr -> \ensuremath{5.9\times10^{-10}}, 
+ 
+   pythonMaxErr -> \ensuremath{1.2\times10^{-11}}, pythonMedErr -> \ensuremath{6.6\times10^{-16}}, wlMaxErr -> \ensuremath{2.4\times10^{-11}}, wlMedErr -> \ensuremath{1.5\times10^{-15}}, 
+ 
+   campN -> 200, campOK -> 200, campMed -> \ensuremath{3.9\times10^{-14}}, campPninetyfive -> \ensuremath{2.8\times10^{-12}}, campMax -> \ensuremath{3.6\times10^{-9}}, campBelow -> 100\%, 
+ 
+   campTime -> 174.~ms, demoRep -> family~II, \texttt{cn} branch, mmaVersion -> 15.0.0 for Microsoft Windows}
+386.2s  ALL DONE
+
+RUN FINISHED

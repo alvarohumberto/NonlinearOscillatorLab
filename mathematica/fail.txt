@@ -1,0 +1,31 @@
+harmonic_solution_and_energy: Failure
+  actual: HoldForm[{False, False}]
+  msgs: {}
+
+cubic_quintic: Failure
+  actual: HoldForm[{False, True}]
+  msgs: {}
+
+elliptic_double_well_50_digits: Failure
+  actual: HoldForm[Abs[-4.62390522181191300291683824747073946141012722296317372046217686444454320164174`50. + Failure["Unbounded", <|"MessageTemplate" :> NOLPeriod::unb|>]] < 1/10000000000000000000000000000000000000000]
+  msgs: {HoldForm[Message[NOLPeriod::unb]]}
+
+elliptic_solutions_satisfy_ODE: MessagesFailure
+  actual: HoldForm[True]
+  msgs: {HoldForm[Message[N::meprec, HoldCompleteForm[50.], HoldCompleteForm[JacobiCN[7/(5*Sqrt[2]), 1/4] + JacobiCN[7/(5*Sqrt[2]), 1/4]^3 - 2*JacobiCN[7/(5*Sqrt[2]), 1/4]*JacobiDN[7/(5*Sqrt[2]), 1/4]^2 + (JacobiCN[7/(5*Sqrt[2]), 1/4]*JacobiSN[7/(5*Sqrt[2]), 1/4]^2)/2]]], HoldForm[Message[N::meprec, HoldCompleteForm[50.], HoldCompleteForm[(9*JacobiCN[(7*Sqrt[119/2])/100, -81/238])/10 - (729*JacobiCN[(7*Sqrt[119/2])/100, -81/238]^3)/2000 + (9*((-119*JacobiCN[(7*Sqrt[119/2])/100, -81/238]*JacobiDN[(7*Sqrt[119/2])/100, -81/238]^2)/200 - (81*JacobiCN[(7*Sqrt[119/2])/100, -81/238]*JacobiSN[(7*Sqrt[119/2])/100, -81/238]^2)/400))/10]]], HoldForm[Message[N::meprec, HoldCompleteForm[50.], HoldCompleteForm[(-6*JacobiDN[21/(25*Sqrt[2]), 11/18])/5 + (216*JacobiDN[21/(25*Sqrt[2]), 11/18]^3)/125 + (6*((-11*JacobiCN[21/(25*Sqrt[2]), 11/18]^2*JacobiDN[21/(25*Sqrt[2]), 11/18])/25 + (11*JacobiDN[21/(25*Sqrt[2]), 11/18]*JacobiSN[21/(25*Sqrt[2]), 11/18]^2)/25))/5]]], HoldForm[Message[General::stop, HoldCompleteForm[N::meprec]]]}
+
+simulation_vs_elliptic_trajectory: Failure
+  actual: HoldForm[False]
+  msgs: {}
+
+triple_well_equilibria_exact: Failure
+  actual: HoldForm[{-1, 0, 1, -(1/Sqrt[3]), 1/Sqrt[3]}]
+  msgs: {}
+
+period_closes_orbit: Failure
+  actual: HoldForm[False]
+  msgs: {}
+
+separatrix_log_asymptotics: MessagesFailure
+  actual: HoldForm[{True, True}]
+  msgs: {HoldForm[Message[NIntegrate::precw, HoldCompleteForm[1/(Sqrt[2]*Sqrt[5.0000000000000000000000000000000000000000000000000001`34.397930237156125*^-6 + 0.3535569261095022021828661160453447194105517626791384062179`39.69897000433602*(0.7071138522190044043657322320906894388211035253582768124358`40. + 0.7070997100833799663084629049122362041819842217979264348473`39.99999131411036*Sin[NonlinearOscillatorLab`Private`t$8950]) + 0.25`40.*(0.7071138522190044043657322320906894388211035253582768124358`40. + 0.7070997100833799663084629049122362041819842217979264348473`39.99999131411036*Sin[NonlinearOscillatorLab`Private`t$8950])^2])], HoldCompleteForm[40.]]], HoldForm[Message[NIntegrate::precw, HoldCompleteForm[1/(Sqrt[2]*Sqrt[4.99999999950000000009999999997500000000700000001`29.397940008596038*^-11 + 0.25`40.*(0``39.849485002146295 + 1.4142135624438057269115046418868068260252869295165434578134`40.*Sin[NonlinearOscillatorLab`Private`t$9006])^2])], HoldCompleteForm[40.]]]}

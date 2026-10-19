@@ -1,0 +1,5 @@
+- Python and Wolfram Language toolkit for Duffing and cubic-quintic oscillators.
+- Factored integrand gives 1e-15 median period error, also near separatrices.
+- Closed-form Jacobi-elliptic solutions of the cubic-quintic oscillator.
+- Verified against elliptic periods, separatrix asymptotics and 32-digit references.
+- All paper figures and tables regenerate from bundled Mathematica scripts.

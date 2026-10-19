@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this research software, cite its archived release."
+title: "NonlinearOscillatorLab"
+version: 0.1.0
+authors:
+  - family-names: Salas
+    given-names: Alvaro H.
+license: MIT
+repository-code: "https://github.com/alvarohumberto/NonlinearOscillatorLab"

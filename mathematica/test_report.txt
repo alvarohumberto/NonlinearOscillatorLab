@@ -1,0 +1,34 @@
+NonlinearOscillatorLab (Wolfram Language) 0.1.0 - 15.0.0 for Microsoft Windows (64-bit) (May 19, 2026)
+Passed 31 / 31
+
+harmonic_period  Success  83.1
+harmonic_solution_and_energy  Success  30.4
+double_well_equilibria_exact  Success  0.
+turning_points_exact  Success  9.6
+separatrix_detection  Success  2.
+cubic_quintic  Success  18.1
+equilibrium_period  Success  0.
+harmonic_period_40_digits  Success  9.4
+cubic_quintic_machine_vs_40_digits  Success  12.3
+elliptic_hardening  Success  9.1
+elliptic_softening  Success  0.4
+elliptic_double_well_inner_dn  Success  7.1
+elliptic_double_well_outer_cn  Success  5.2
+elliptic_double_well_50_digits  Success  15.4
+elliptic_solutions_satisfy_ODE  Success  971.7
+simulation_vs_elliptic_trajectory  Success  10.1
+triple_well_equilibria_exact  Success  0.5
+triple_well_barrier  Success  1.
+period_closes_orbit  Success  1.2
+unbounded_detected  Success  0.
+separatrix_log_asymptotics  Success  174.3
+closed_form_hardening  Success  416.1
+closed_form_softening  Success  285.
+closed_form_dw_inner  Success  459.3
+closed_form_dw_outer  Success  559.
+closed_form_cq_demo  Success  476.1
+closed_form_tw_center  Success  260.7
+closed_form_tw_side  Success  1138.8
+closed_form_tw_outer  Success  1478.
+closed_form_duffing_period  Success  0.
+python_cross_validation  Success  4981.

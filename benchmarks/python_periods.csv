@@ -1,0 +1,10 @@
+id,a,b,c,x0,v0,period,energy_drift_T40,description
+harmonic,4.0,0.0,0.0,0.4,0.0,3.141592653589793,1.2536352427530622e-10,"harmonic reference, T = pi"
+hardening,1.0,1.0,0.0,1.0,0.0,4.768022029102461,1.661899824106123e-10,hardening Duffing
+softening,1.0,-0.5,0.0,0.9,0.0,7.560247907820581,1.2071725088885525e-10,softening Duffing
+dw_inner,-1.0,1.0,0.0,1.2,0.0,4.623905221811912,3.8502776569926236e-11,"double well, intra-well orbit"
+dw_outer,-1.0,1.0,0.0,1.6,0.0,7.386828150976246,1.8550466750973278e-10,"double well, inter-well orbit"
+cq_demo,1.0,0.4,0.2,0.8,0.1,5.633261676532775,7.09814022937977e-11,cubic-quintic demo case
+tw_center,1.0,-4.0,3.0,0.3,0.0,7.295155971525861,1.3898712904673957e-11,"triple well, central well"
+tw_side,1.0,-4.0,3.0,1.1,0.0,3.460792103704556,7.639868981002681e-11,"triple well, side well"
+tw_outer,1.0,-4.0,3.0,1.2,0.3,9.646253874918365,5.92403456317957e-11,"triple well, above barriers"
